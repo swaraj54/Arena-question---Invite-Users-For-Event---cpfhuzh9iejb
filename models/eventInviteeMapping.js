@@ -10,11 +10,11 @@ const eventInviteeSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
-  // invitee: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'Event',
-  //   required: true,
-  // },
+  invitee: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event',
+    required: true,
+  },
 });
 
 const Invitee = mongoose.model('Invitee', eventInviteeSchema);

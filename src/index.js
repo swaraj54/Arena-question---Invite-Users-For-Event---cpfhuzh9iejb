@@ -5,16 +5,15 @@ const mongoose = require('mongoose');
 dotenv.config();
 
 //connect to DB
-mongoose.set('useCreateIndex', true);
-mongoose.set('useFindAndModify', false);
+// mongoose.set('useCreateIndex', true);
+// mongoose.set('useFindAndModify', false);
 
 const url = process.env.MONGO_URL || 'mongodb://0.0.0.0:27017/users';
 mongoose.connect(
   url,
   { useNewUrlParser: true, useUnifiedTopology: true },
-  () => {
-    console.log('connected to DB');
-  }
-);
+).then(() => {
+  console.log("Connected to DB.")
+});
 
 app.listen(3000, () => console.log('Server running......'));
